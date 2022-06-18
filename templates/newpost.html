@@ -1,0 +1,17 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+{%block title%}
+Создание поста
+{% endblock %}
+{%block content%}
+<h1>Есть, че сказать?</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.title }}</p>
+    <p>{{ form.text }}</p>
+    <p class="form-name">Фотокарточка (опционально)</p>
+    {{ form.photo }}
+    <span>{{ error }}</span>
+    <br><button type="submit">высрать</button>
+</form>
+{% endblock %}

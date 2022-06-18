@@ -1,0 +1,8 @@
+{% extends 'templatepage.html' %}
+{%block title%}
+Выход из профиля
+{% endblock %}
+{% block content %}
+<p>Вы вышли из своего профиля!</p>
+<a href="{% url 'login'%}">Авторизоваться</a>
+{% endblock %}

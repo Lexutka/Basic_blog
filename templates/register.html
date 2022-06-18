@@ -1,0 +1,29 @@
+{% extends 'templatepage.html' %}
+{%block title%}
+Создание аккаунта
+{% endblock %}
+{% block content %}
+<h1>Создание аккаунта</h1>
+<form action="." method="post">
+    <table>
+        <tr>
+            <td>Имя пользователя</td>
+            <td>{{ user_form.username }}</td>
+        </tr>
+        <tr>
+            <td>Электронная почта</td>
+            <td>{{ user_form.email }}</td>
+        </tr>
+        <tr>
+            <td>Пароль</td>
+            <td>{{ user_form.password }}</td>
+        </tr>
+        <tr>
+            <td>Подтверждение пароля</td>
+            <td>{{ user_form.password2 }}</td>
+        </tr>
+        {% csrf_token %}
+    </table>
+    <p><button type="submit">Создать аккаунт</p>
+</form>
+{% endblock %}

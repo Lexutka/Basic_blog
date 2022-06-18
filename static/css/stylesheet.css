@@ -1,0 +1,292 @@
+* {
+    text-decoration: none; 
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #98cb32;
+    padding: 10px 20px;
+    font-size: 20px;
+    vertical-align: middle;
+    display:flex;
+    align-items:baseline;
+    position: relative;
+}
+
+#home-page-btn {
+    font-weight: bold;
+    font-size: 30px;
+    color: #6532CB;
+    text-decoration: underline 5px;
+}
+
+#new-post-btn {
+    border-radius: 5px;
+    border-style: outset;
+    background-color: #CB6532;
+    padding: 3px;
+}
+
+nav a {
+    margin-right: 13px;
+}
+
+.auth-btn {
+    text-align: right;
+    border-bottom: 3px solid black;
+}
+
+.auth-btn1 {
+    text-align: right;
+    border-bottom: 3px solid black;
+    margin-left: -14px;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+body p {
+    text-align: center;
+}
+
+main {
+}
+
+[href]:visited {
+    color: initial;
+}
+
+h1 {
+    background: #6532CB;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0px;
+    color: #98cb32;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+}
+
+article {
+    text-align: center;
+    border-bottom: 3px solid gray;
+}
+
+h2,
+#in-feed-article-title {
+    font-family: fantasy;
+    font-size: 30px;
+
+}
+
+.in-feed-article-info {
+    color: gray;
+    text-align: center;
+}
+
+#in-feed-article-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+} 
+
+article h3 {
+    margin: 10px 0px;
+}
+
+article p {
+    text-align: justify;
+    padding: 0% 20%;
+    margin: 10px 0;
+    }
+
+article img {
+    margin: 0 20%;
+    max-height: 30em;
+    max-width: 60%;
+}
+
+figcaption {
+    font-size: 10px;
+    color: gray;
+}
+
+form {
+    text-align: center;
+    margin: 20px auto;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+form input {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+form textarea {
+    margin: 0 20%;
+    padding: 5px;
+    min-width: 60%;
+    max-width: 60%;
+    min-height: 10em;
+    max-height: 10em;
+    overflow-y: scroll;
+}
+
+form .form-name {
+    padding: 0 20%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+form .form-control-title {
+    width: 50%;
+    border: solid 3px #6532CB;
+    border-radius: 7px;
+    font-size: 30px;
+}
+form .form-control {
+    width: 50%;
+    border: solid 3px #6532CB;
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+button[type="submit"] {
+    background-color: #CB6532;
+    border-radius: 4px;
+    border: 3px outset black;
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#forget-pass-btn {
+    text-decoration: underline;
+}
+
+#edit-btn {
+    font-size: 0.5em;
+    color: #CB6532;
+}
+
+form table {
+    margin: 10px auto;
+}
+
+#comments {
+    text-align: justify;
+    padding: 0% 20%;
+}
+
+#comments form {
+    text-align: justify;
+    padding: 0% 0%;
+}
+
+#comments h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#comments p {
+    text-align: justify;
+}
+
+#comments form p {
+    font-size: 25px;
+    margin: 10px auto;
+    width: 100%;
+}
+#comments textarea {
+    min-width: calc(100% - 15px);;
+    max-width: calc(100% - 15px);
+    min-height: 7em;
+    max-height: 7em;
+    overflow-y: scroll;
+    margin: 10px auto;
+    width: 100%;
+}
+#comments table {
+    text-align: justify;
+    margin: 10px 0px;
+    border: 1px solid #464646;
+    width: 100%;
+}
+
+#com-info {
+    text-align: justify;
+    border-collapse: collapse;
+    border-bottom: 1px solid darkgray;
+    border-top: 1px solid black;
+}
+
+#com-body {
+    padding: 10px 10px;
+}
+
+#com-img {
+    padding: 0.1em 10px 10px;
+}
+
+#com-img img{
+    margin: 0 20%;
+    max-height: 10em;
+    max-width: 30em;
+}
+    
+
+.login-rel-btn {
+    background-color: #CB6532;
+    height: auto;
+    padding: 10px 10px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0px;
+}
+
+.login-rel-btn a{
+    border-radius: 4px;
+    border: 3px black solid;
+    padding: 3px;
+}
+
+#change-pass {
+    margin: 20px 25%;
+    text-align: center;
+}
+
+#change-pass ul {
+    text-align: justify;
+}
+
+#cab-options {
+    position: absolute;
+    right: 0px;
+    float: left;
+    background-color: #CB6532;
+    height: 100%;
+    width: auto;
+    padding: 20px 30px;
+    margin: 0px auto;
+}
+
+#cab-options h2,
+#cab-options h3 {
+    text-align: center;
+}
+
+#cab-options p {
+    text-align: center;
+    margin: 10px auto;
+    border: 3px solid black;
+    border-radius: 4px;
+}

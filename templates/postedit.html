@@ -1,0 +1,16 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+{%block title%}
+Создание поста
+{% endblock %}
+{%block content%}
+<h1>Слово не воробей! Но поймать можно попробовать</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <span>{{ error }}</span>
+    <button type="submit">высрать</button>
+</form>
+<br>
+<p><button onclick="window.location.href = 'home'">На базу</button></p>
+{% endblock %}

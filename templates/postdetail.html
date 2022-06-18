@@ -1,0 +1,61 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+
+{%block title%}
+{{ title }}
+{% endblock %}
+{% block content %}
+<h1>{{ post.title }}
+{% if user.is_authenticated and check_author %}
+    <a id="edit-btn" href="{% url 'edit_post' pk=post.pk %}">(Редактировать)</a>
+{% endif %}
+</h1>
+<article>
+    <p class="in-feed-article-info">{{ post.date }} {{ post.author }}</p>
+    {% if post.photo %}
+        <img src="{{ post.photo.url }}" alt="photo">
+    <figcaption>Оригинальный размер картинки  {{  post.photo.width }}x{{ post.photo.height }}</figcaption>
+    {% endif %}
+    <p>{{ post.text|linebreaksbr }}</p>
+</article>
+<div id="comments">
+{% if new_comment %}
+    <h2>Ваш комментарий опубликован</h2>
+{% else %}
+    {% if request.user.is_authenticated %}
+        <form action="." method="POST" enctype="multipart/form-data">
+            <p>Есть, что ответить? — оставь комментарий!</p>
+            <p>{{ comment_form.body }}</p>
+            <p>{{ comment_form.photo }}</p>
+            {% csrf_token %}
+            <button type="submit">Добавить комментарий</button>
+        </form>
+    {% else %}
+        <h2>Оставить комментарий</h2>
+        <p><a href="{% url 'login' %}?next={{request.path}}">Войдите</a> или <a href="{% url 'register' %}?next={{request.path}}">зарегистрируйтесь</a>, чтобы оставить комментарий</p>
+    {% endif %}
+{% endif %}
+{% with comments.count as total_comments %}
+    <h3>
+        {{ total_comments }} комментариев {{ total_comment|pluralize }}
+    </h3>
+{% endwith %}
+<table>
+    {% for comment in comments %}
+        <tr>
+            <td id="com-info">#{{ forloop.counter }} {{ comment.author }} | {{ comment.created }}</td>
+        </tr>
+        <tr>
+            <td id="com-body">{{ comment.body|linebreaks }}</td>
+        </tr>
+        {% if comment.photo %}
+        <tr>
+            <td id="com-img"><img src="{{ comment.photo.url }}" alt="photo"></td>
+        </tr>
+        {% endif %}
+    {% empty %}
+    <p>Комментариев пока нет</p>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

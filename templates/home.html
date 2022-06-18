@@ -1,0 +1,19 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+{%block title%}
+База
+{% endblock %}
+{%block content%}
+<h1>Свежие мысли</h1>
+{% for post in posts %}
+    <article>
+    <h3><a id="in-feed-article-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+    <p class="in-feed-article-info">Автор: {{post.author }} | {{ post.date }} | Комментариев: {{ post.comments.count }}</p>
+        {% if post.photo %}
+            <a href="{% url 'post_detail' pk=post.pk %}"><img src="{{ post.photo.url }}" alt="photo" width="200px"></a>
+        <figcaption>Оригинальный размер картинки  {{  post.photo.width }}x{{ post.photo.height }}</figcaption>
+        {% endif %}
+    <p id="in-feed-article-text">{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
+{% endblock %}

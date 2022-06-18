@@ -18,7 +18,7 @@ class PostForm(forms.ModelForm):
 
         }),'photo': forms.FileInput(attrs={
            'class': 'form-control-photo',
-
+            
         })}
 
 
